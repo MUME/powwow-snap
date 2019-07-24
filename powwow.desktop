@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=powwow
+GenericName=powwow
+Exec=powwow
+Icon=powwow
+Terminal=true
+Categories=Telnet;Mud;ConsoleOnly;
+Keywords=telnet;mud
