@@ -61,6 +61,6 @@ parts:
       powwow-48.png: usr/share/icons/hicolor/48x48/apps/powwow.png
       powwow-128.png: usr/share/icons/hicolor/128x128/apps/powwow.png
       powwow-256.png: usr/share/icons/hicolor/256x256/apps/powwow.png
-    snap:
+    prime:
       - usr/share
     after: [powwow]
