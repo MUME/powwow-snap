@@ -52,9 +52,9 @@ parts:
       - locales
 
   desktop-integration:
-    plugin: copy
+    plugin: dump
     source: .
-    files:
+    organize:
       powwow.desktop: usr/share/applications/powwow.desktop
       powwow-16.png: usr/share/icons/hicolor/16x16/apps/powwow.png
       powwow-32.png: usr/share/icons/hicolor/32x32/apps/powwow.png
