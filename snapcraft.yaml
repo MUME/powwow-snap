@@ -1,6 +1,6 @@
 name: powwow
 version: git
-version-script: git -C /build/powwow/parts/powwow/src describe --tags --always --long
+version-script: git -C $SNAPCRAFT_PROJECT_DIR/../parts/powwow/src describe --tags --always --long
 summary: Powwow is a client program intended mainly for playing MUDs
 description: |
   powwow is a client program, which replaces telnet for the lazy mudder who wants some (only some?) extra features. It is primarily designed for DikuMUDs, but nothing prevents its use for other types of muds. powwow is based on another client, cancan, and cancan was originally inspired by tintin (yet another client) by Peter Unold (pjunold@daimi.aau.dk), but is entirely re-written. powwow also implements the MUME remote editing protocol, which enables you to edit texts on the mud using your own favourite editor, several texts at once if you have a windowing terminal.
@@ -12,7 +12,7 @@ base: core18
 apps:
   powwow:
     command: locales-launch powwow
-    desktop: share/applications/powwow.desktop
+    desktop: usr/share/applications/powwow.desktop
     plugs:
       - home
       - network
@@ -59,8 +59,7 @@ parts:
       powwow-16.png: usr/share/icons/hicolor/16x16/apps/powwow.png
       powwow-32.png: usr/share/icons/hicolor/32x32/apps/powwow.png
       powwow-48.png: usr/share/icons/hicolor/48x48/apps/powwow.png
+      powwow-64.png: usr/share/icons/hicolor/64x64/apps/powwow.png
       powwow-128.png: usr/share/icons/hicolor/128x128/apps/powwow.png
       powwow-256.png: usr/share/icons/hicolor/256x256/apps/powwow.png
-    prime:
-      - usr/share
     after: [powwow]
