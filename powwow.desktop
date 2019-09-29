@@ -6,5 +6,5 @@ GenericName=powwow
 Exec=powwow
 Icon=/usr/share/icons/hicolor/256x256/apps/powwow.png
 Terminal=true
-Categories=Telnet;Mud;ConsoleOnly;
+Categories=Game;RolePlaying;ConsoleOnly;
 Keywords=telnet;mud
