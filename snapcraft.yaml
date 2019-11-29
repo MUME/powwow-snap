@@ -8,6 +8,12 @@ grade: stable
 confinement: strict
 base: core18
 
+architectures:
+  - build-on: armhf
+  - build-on: arm64
+  - build-on: i386
+  - build-on: amd64
+
 apps:
   powwow:
     command: locales-launch powwow
@@ -37,8 +43,10 @@ parts:
     build-packages:
       - pkg-config
       - libncurses5-dev
+      - libpcre3-dev
     stage-packages:
       - libncurses5
+      - libpcre3
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags --always --long)"
