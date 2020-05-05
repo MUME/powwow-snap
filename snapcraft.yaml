@@ -14,6 +14,20 @@ architectures:
   - build-on: i386
   - build-on: amd64
 
+layout:
+  /etc/emacs:
+    bind: $SNAP/etc/emacs
+  /etc/emacs25:
+    bind: $SNAP/etc/emacs25
+  /usr/lib/emacs:
+    bind: $SNAP/usr/lib/emacs
+  /usr/share/emacs:
+    bind: $SNAP/usr/share/emacs
+  /etc/nanorc:
+    bind-file: $SNAP/etc/nanorc
+  /usr/share/nano:
+    bind: $SNAP/usr/share/nano
+ 
 apps:
   powwow:
     command: locales-launch powwow
@@ -75,3 +89,19 @@ parts:
       powwow-128.png: usr/share/icons/hicolor/128x128/apps/powwow.png
       powwow-256.png: usr/share/icons/hicolor/256x256/apps/powwow.png
     after: [powwow]
+
+  editors:
+    plugin: nil
+    stage-packages:
+      - emacs
+      - less
+      - libgpm2
+      - nano
+      - vim
+    override-build: |
+      snapcraftctl build
+      cd $SNAPCRAFT_PART_INSTALL/usr/bin
+      ln -sf emacs25 emacs
+      ln -sf vim.basic vim
+      ln -sf vim.basic vi
+    after: [desktop-integration]
