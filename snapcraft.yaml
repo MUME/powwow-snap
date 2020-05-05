@@ -21,6 +21,8 @@ apps:
     plugs:
       - home
       - network
+    environment:
+      POWWOWHELP: $SNAP/share/powwow
   movieplay:
     command: locales-launch powwow-movieplay
     plugs:
